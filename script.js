@@ -1,57 +1,31 @@
-let arr=["Rock", "Paper", "Scissors"];
+let playerScore=0, computerScore=0;
+let arr=["ROCK", "PAPER", "SCISSORS"];
 
 function hasil(a, b){
-	if(a==0){
-		if(b==0){
-			return 0;
-		}
-		else if(b==1){
-			return 2;
-		}
-		else{
-			return 1;
-		}
-	}
-	else if(a==1){
-		if(b==0){
-			return 1;
-		}
-		else if(b==1){
-			return 0;
-		}
-		else{
-			return 2;
-		}
-	}
-	else{
-		if(b==0){
-			return 2;
-		}
-		else if(b==1){
-			return 1;
-		}
-		else{
-			return 0;
-		}
-	}
+	if(a=="ROCK"){
+    if(b=="ROCK") return 0;
+    else if(b=="PAPER") return 2;
+    else return 1;
+  }
+  else if(a=="PAPER"){
+    if(b=="ROCK") return 1;
+    else if(b=="PAPER") return 0;
+    else return 2;
+  }
+  else{
+    if(b=="ROCK") return 2;
+    else if(b=="PAPER") return 1;
+    else return 0;
+  }
 }
 
 function ubah(pilihan){
-	pilihan=pilihan.toLowerCase();
-	if(pilihan[0]=='r'){
-		return 0;
-	}
-	else if(pilihan[0]=='p'){
-		return 1;
-	}
-	else{
-		return 2;
-	}
+	return pilihan.toUpperCase();
 }
 
 function computerPlay(){
 	let angka=Math.floor(Math.random()*3);
-	return angka;
+	return arr[angka];
 }
 
 function playRound(playerSelection, computerSelection){
@@ -60,26 +34,21 @@ function playRound(playerSelection, computerSelection){
 		return "Draw!";
 	}
 	else if(result==1){
-		return `You Win! ${arr[playerSelection]} beats ${arr[computerSelection]}.`;
+		playerScore++;
+    return `You Win! ${playerSelection} beats ${computerSelection}.`;
 	}
 	else{
-		return `You Lose! ${arr[computerSelection]} beats ${arr[playerSelection]}.`;
+    computerScore++;
+		return `You Lose! ${computerSelection} beats ${playerSelection}.`;
 	}
 }
 
 function game(){
-	let playerScore=0, computerScore=0;
 	for(let i=1;i<=5;++i){
 		let playerSelection=ubah(prompt("Please Enter `Rock, Paper, or Scissors`"));
 		let computerSelection=computerPlay(); 
 		let result=playRound(playerSelection, computerSelection);
 		console.log(result);
-		if(result[4]=='W'){
-			playerScore++;
-		}
-		else if(result[4]=='L'){
-			computerScore++;
-		}
 	}
 	if(playerScore > computerScore){
 		return "Congrats! You Won This Round!";
