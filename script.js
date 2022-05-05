@@ -1,6 +1,5 @@
-let playerScore=0, computerScore=0;
 let arr=["ROCK", "PAPER", "SCISSORS"];
-
+//tes
 function hasil(a, b){
 	if(a=="ROCK"){
     if(b=="ROCK") return 0;
