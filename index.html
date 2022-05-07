@@ -4,7 +4,48 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rock Paper Scissors</title>
-  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="script.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" 
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Chivo:wght@700&display=swap" 
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/be3eb44708.js" 
+    crossorigin="anonymous"></script>  
 </head>
 <body>
+  <div id="header">
+    <h1 id="header-title">ROCK PAPER SCISSORS</h1>
+  </div>
+  <div id="main">
+    <h2 id="result_text">Choose One!</h2>
+    <p id="result_paragraph">First to score 5 points wins the game.</p>
+    <div id="buttons">
+      <button id="ROCK">&#9994;</button>
+      <button id="PAPER">&#9995;</button>
+      <button id="SCISSORS">&#9996;</button>
+    </div>
+    <div id="result">
+      <div id="status">
+        <div class="all-status">
+          <div class="stats-logo" id="player_status">👤</div>
+          <h3 class="stats-h3" id="player"></h3>
+        </div>
+        <div class="all-status">
+          <div class="stats-logo" id="computer_status">🖥</div>
+          <h3 class="stats-h3" id="computer"></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>Copyright © 2022 Ivan Febrianto 
+      <a href="https://github.com/ivanf-12" target="_blank"><i class="fa-brands fa-github"></i></a></p>
+  </footer>
 </body>

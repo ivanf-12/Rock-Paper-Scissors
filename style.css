@@ -1,0 +1,141 @@
+* {
+  color: yellow;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #0B0C10;
+  min-height: 100vh;
+  width: 100vw;
+  max-width:100%;  /* added */
+}
+
+button {
+	transition : 0.07s;
+}
+
+#header {
+  background-color: #1F2833;
+  padding: 2em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+}
+
+#header-title {
+  color: #66FCF1;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+}
+
+#main {
+  width: 100%;
+  text-align: center;
+  padding-top: 2.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Chivo', sans-serif;
+  margin-bottom: 4em;
+}
+
+#main-title, #result_text {
+  color: #66FCF1;
+  font-size: 2em;
+}
+
+p, #result_paragraph {
+  font-weight: 300;
+  margin-top: 0.5em;
+  color: #C5C6C7;
+  font-size: 1.25em;
+}
+
+#buttons {
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-around;
+  gap: 1.25em;
+}
+
+button {
+  border-radius: 7px;
+  border: 0;
+  background-color: #1F2833;
+  font-size: 3.5em;
+  padding: 0.25em;
+}
+
+button:hover {
+  background-color: #171d25
+}
+
+#result {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#status {
+  gap: 4em;
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.all-status {
+  gap: 0.5em;
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-logo {
+  font-size: 3.5em;
+}
+
+.stats-h3 {
+  color: #66FCF1;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  color: #1F2833;
+  font-size: 1em;
+  font-weight: lighter;
+  margin-top: auto;
+}
+
+i {
+  margin-left: 0.5em;
+  color: white;
+}
+
+@media only screen and (min-width: 500px){
+  .stats-logo, button {
+    font-size: 5em;
+  }
+
+  #result_text {
+    font-size: 3em;
+  }
+
+  #result_paragraph {
+    font-size: 2.25em;
+  }
+
+  .stats-h3 {
+    font-size: 2em;
+  }
+}
