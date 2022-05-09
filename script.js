@@ -1,18 +1,27 @@
 let playerScore=0, computerScore=0, computerSelection, playerSelection;
 let arr=["ROCK", "PAPER", "SCISSORS"];
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll(".rps");
 const player = document.querySelector("#player")
 const computer = document.querySelector("#computer");
 const result_text = document.querySelector("#result_text");
 const result_paragraph = document.querySelector("#result_paragraph");
 const player_status = document.querySelector("#player_status");
 const computer_status = document.querySelector("#computer_status");
+const overlay = document.querySelector(".overlay");
+const restart = document.querySelector("#notif-button");
+const notif_box = document.querySelector(".notif");
+const notif_text = document.querySelector("#notif-text");
 player.textContent = "Player : 0";
 computer.textContent = "Computer : 0";
 
 buttons.forEach((button) => {
   button.myParam=button.id;
   button.addEventListener('click', playRound);
+});
+
+restart.addEventListener('click', ()=>{
+  overlay.classList.remove("active");
+  game();
 });
 
 function gambar(jenis) {
@@ -78,18 +87,19 @@ function playRound(e){
   result_text.textContent = returns;
   result_paragraph.textContent = returnss;
   if(playerScore == 5 || computerScore == 5){
-    window.alert(game());
+    if(playerScore > computerScore){
+      notif_text.textContent = "You Won!";
+    }
+    else{
+      notif_text.textContent = "You Lost.";
+    }
+    notif_box.classList.add("notiff");
+    overlay.classList.add("active");
   }
 }
 
 function game(){
   let result;
-	if(playerScore > computerScore){
-		result = "Congrats! You Won This Round!";
-	}
-	else{
-		result = "Sorry, You Lost this Round.";
-	}
   computerScore = 0;
   playerScore = 0;
   player.textContent = `Player : ${0}`;
@@ -98,5 +108,6 @@ function game(){
   result_paragraph.textContent = "First to score 5 points wins the game.";
   player_status.textContent = "👤";
   computer_status.textContent = "🖥";
+  notif_box.classList.remove("notiff");
   return result;
 }
