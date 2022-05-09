@@ -194,19 +194,15 @@ i {
   .stats-logo, button {
     font-size: 5em;
   }
-
   #result_text {
     font-size: 3em;
   }
-
   #result_paragraph {
     font-size: 2.25em;
   }
-
   .stats-h3 {
     font-size: 2em;
   }
-
   .notif {
     padding: 4em 6em;
   }
@@ -216,7 +212,6 @@ i {
   #footer {
     font-size: 1.25em;
   }
-
   .notif {
     padding: 6em 8em;
   }
