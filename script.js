@@ -91,6 +91,7 @@ function playRound(e){
       notif_text.textContent = "You Won!";
     }
     else{
+      overlay.classList.add("overlay-lose");
       notif_text.textContent = "You Lost.";
     }
     notif_box.classList.add("notiff");
@@ -109,5 +110,6 @@ function game(){
   player_status.textContent = "👤";
   computer_status.textContent = "🖥";
   notif_box.classList.remove("notiff");
+  overlay.classList.remove("overlay-lose");
   return result;
 }

@@ -167,6 +167,10 @@ i {
   justify-content: center;
 }
 
+.overlay-lose {
+  background-color: rgba(255, 0, 0, 0.75);
+}
+
 #notif-text {
   text-align: center;
   font-family: 'Chivo', sans-serif;
