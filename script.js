@@ -37,7 +37,7 @@ function gambar(jenis) {
 }
 
 function hasil(a, b){
-	if(a=="ROCK"){
+  if(a=="ROCK"){
     if(b=="ROCK") return 0;
     else if(b=="PAPER") return 2;
     else return 1;
@@ -55,12 +55,12 @@ function hasil(a, b){
 }
 
 function ubah(pilihan){
-	return pilihan.toUpperCase();
+  return pilihan.toUpperCase();
 }
 
 function computerPlay(){
-	let angka=Math.floor(Math.random()*3);
-	return arr[angka];
+  let angka=Math.floor(Math.random()*3);
+  return arr[angka];
 }
 
 function playRound(e){
@@ -69,21 +69,21 @@ function playRound(e){
   computerSelection = computerPlay();
   player_status.textContent = gambar(playerSelection);
   computer_status.textContent = gambar(computerSelection);
-	let result=hasil(playerSelection, computerSelection);
-	if(result==0){
-		returns = "Draw!";
+  let result=hasil(playerSelection, computerSelection);
+  if(result==0){
+    returns = "Draw!";
     returnss = "Choose Again!";
-	}
-	else if(result==1){
+  }
+  else if(result==1){
     player.textContent = `Player : ${++playerScore}`;
     returns = `You Win!`;
-	  returnss = `${playerSelection} beats ${computerSelection}.`;
+    returnss = `${playerSelection} beats ${computerSelection}.`;
   }
-	else{
+  else{
     computer.textContent = `Computer : ${++computerScore}`;
-		returns = `You Lose!`;
+    returns = `You Lose!`;
     returnss = `${computerSelection} beats ${playerSelection}.`;
-	}
+  }
   result_text.textContent = returns;
   result_paragraph.textContent = returnss;
   if(playerScore == 5 || computerScore == 5){
